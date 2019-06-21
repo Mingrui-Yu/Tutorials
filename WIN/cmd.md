@@ -17,3 +17,12 @@ del xx.txt
 ```
 dir
 ```
+
+启用administer账户: 先以管理员身份运行cmd
+```
+net user administrator /active:yes
+```
+禁用administer账户
+```
+net user administrator /active:no
+```
