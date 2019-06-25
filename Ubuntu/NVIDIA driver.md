@@ -57,7 +57,7 @@ sudo apt-get update
 ```
 ubuntu-drivers devices
 ```
-安装NVIDIA driver ,如上图显示recommand的驱动, 按ctrl+alt+F1进入tty文本模式 , 关闭(图形)桌面显示管理器LightDM
+安装NVIDIA driver ,如上图显示recommand的驱动, 按ctrl+alt+F1进入tty文本模式[tty注意事项](https://github.com/Mingrui-Yu/Tutorials/blob/master/Ubuntu/tty.md) , 关闭(图形)桌面显示管理器LightDM
 ```
 sudo service lightdm stop
 ``` 
