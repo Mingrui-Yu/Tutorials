@@ -15,5 +15,5 @@
  All unit tests in baselines can be run using pytest runner:
  
  ```
- pip3 install pytest
+ pytest-3
  ```
