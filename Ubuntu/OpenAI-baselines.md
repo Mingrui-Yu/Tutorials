@@ -1,3 +1,6 @@
+[OpenAI baselines](https://github.com/openai/baselines)
+
+
  You'll also need system packages CMake, OpenMPI and zlib. Those can be installed as follows
  
 ```
