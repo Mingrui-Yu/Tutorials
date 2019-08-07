@@ -1,4 +1,4 @@
-# Inline 构造函数
+# inline 构造函数
 构造函数x^2:
 ```
 h = inline('x^2');
