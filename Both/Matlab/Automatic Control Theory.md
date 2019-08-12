@@ -7,7 +7,6 @@ G=tf(num,den)
 ```
 
 零极点模型：
-![avatar](https://img-blog.csdnimg.cn/20190122173117994.png)
 ```
 KGain=K;  %系统增益K
 Z=[1; 2; 3]； %零点
