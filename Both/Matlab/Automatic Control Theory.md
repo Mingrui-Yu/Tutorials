@@ -115,7 +115,7 @@ margin(num,den) %画伯德图并计算幅值裕度和相位裕度
 [A, B, C, D] = ssdata(sys)  % sys为系统的传递函数表达式
 ```
 
-由状态空间表达式求解传递函数
+由状态空间表达式求解传递函数：
 ```
 [num, den] = ss2tf(A, B, C, D)
 [z, p, k] = ss2zp(A, B, C, D)
