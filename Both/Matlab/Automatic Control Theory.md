@@ -272,6 +272,6 @@ K = place(A, B, p)
 ### 设计状态观测器
 观测器的设计与状态反馈的极点配置具有对偶性，所以可以直接求解其对偶系统的状态反馈矩阵K，然后将其转置，得到观测器的增益矩阵G：
 ```
-K = acker(A.T, C.T, p) or K = place(A.T, C.T, p)
-G = K.T
+K = acker(A', C', p) or K = place(A', C', p)
+G = K'
 ```
