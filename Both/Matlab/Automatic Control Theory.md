@@ -1,4 +1,26 @@
 # 经典控制理论
+## 控制系统微分方程的数值解
+Matlab提供了一个采用龙格库塔法求解微分方程数值解的函数ode113()，具有很高的计算精度：
+```
+[t, y] = ode113('F', tspan, y0, options)
+% t是时间向量；
+% y是与t相互对应的方程的数值解；
+% 'F'是对于系统微分方程的描述，一般由用户编写特定的odefile()函数；
+% tspan是1*2的向量，表示计算开始和结束的时间；
+% y0是微分方程的初始条件；
+% options是控制精度的可选参数，由odese()函数来设置，常用的参数值有'RelTol'(表示1e-3精度)，'AbsTol'(表示1e-6精度)。
+```
+odefile()函数的功能是描述系统的微分方程和一些相关参数，提供ode113()的接口：
+```
+function F = odefile(t, y)
+```
+注意：ode113()函数只接受一阶微分方程的形式，因此对于高阶微分方程，首先要化为若干个一阶微分方程，然后再使用odefile()函数。
+
+
+eg：
+设系统的微分运动方程为：![](https://latex.codecogs.com/png.latex?%5Cinline%20M%20%5Cfrac%7B%5Cmathrm%7Bd%7D%5E2%20x%28t%29%7D%7B%5Cmathrm%7Bd%7D%20t%7D%20&plus;%20B%5Cfrac%7B%5Cmathrm%7Bd%7D%20x%28t%29%7D%7B%5Cmathrm%7Bd%7D%20t%7D&plus;Kx%28t%29%20%3Df%28t%29)
+
+
 ## 传递函数
 简单模型：
 ```
