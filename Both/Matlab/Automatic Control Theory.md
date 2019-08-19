@@ -8,7 +8,7 @@ Matlab提供了一个采用龙格库塔法求解微分方程数值解的函数od
 % 'F'是对于系统微分方程的描述，一般由用户编写特定的odefile()函数；
 % tspan是1*2的向量，表示计算开始和结束的时间；
 % y0是微分方程的初始条件；
-% options是控制精度的可选参数，由odese()函数来设置，常用的参数值有'RelTol'(表示1e-3精度)，'AbsTol'(表示1e-6精度)。
+% options是控制精度的可选参数，由odeset()函数来设置，常用的参数值有'RelTol'(表示1e-3精度)，'AbsTol'(表示1e-6精度)。
 ```
 odefile()函数的功能是描述系统的微分方程和一些相关参数，提供ode113()的接口：
 ```
@@ -18,7 +18,28 @@ function F = odefile(t, y)
 
 
 eg：
-设系统的微分运动方程为：![](https://latex.codecogs.com/png.latex?%5Cinline%20M%20%5Cfrac%7B%5Cmathrm%7Bd%7D%5E2%20x%28t%29%7D%7B%5Cmathrm%7Bd%7D%20t%7D%20&plus;%20B%5Cfrac%7B%5Cmathrm%7Bd%7D%20x%28t%29%7D%7B%5Cmathrm%7Bd%7D%20t%7D&plus;Kx%28t%29%20%3Df%28t%29)
+设系统的微分运动方程为：![](https://latex.codecogs.com/png.latex?%5Cinline%20M%20%5Cfrac%7B%5Cmathrm%7Bd%7D%5E2%20x%28t%29%7D%7B%5Cmathrm%7Bd%7D%20t%7D%20&plus;%20B%5Cfrac%7B%5Cmathrm%7Bd%7D%20x%28t%29%7D%7B%5Cmathrm%7Bd%7D%20t%7D&plus;Kx%28t%29%20%3Df%28t%29)，式中，K=20，B=5，M=1，f(t)=30：
+
+解：将二阶微分方程化为两个一阶微分方程的格式，然后求解，令：
+![](https://latex.codecogs.com/gif.latex?%5Cinline%20%5Cleft%5C%7B%5Cbegin%7Bmatrix%7D%20x_1%28t%29%20%3D%20x%28t%29%20%5C%5C%20x_2%28t%29%20%3D%20%5Cfrac%7B%5Cmathrm%7Bd%7D%20x%28t%29%7D%7B%5Cmathrm%7Bd%7D%20t%7D%20%5Cend%7Bmatrix%7D%5Cright.)
+
+则有：![](https://latex.codecogs.com/gif.latex?%5Cinline%20%5Cleft%5C%7B%5Cbegin%7Bmatrix%7D%20%5Cfrac%7B%5Cmathrm%7Bd%7D%20x_1%28t%29%7D%7B%5Cmathrm%7Bd%7D%20x%7D%20%3D%20x_2%28t%29%20%5C%5C%20%5Cfrac%7B%5Cmathrm%7Bd%7D%20x_2%28t%29%7D%7B%5Cmathrm%7Bd%7D%20x%7D%20%3D%20%5Cfrac%7B1%7D%7BM%7D%28f%28t%29-Bx_2%28t%29-Kx_1%28t%29%29%20%5Cend%7Bmatrix%7D%5Cright.)
+
+根据上式编写odefile()函数：
+```
+function xt = F(t, x)
+ft = 30; M = 1; B=5; K = 20;
+xt = [x(2); 
+      1/M*(ft-B*x(2)-K*x(1))];
+```
+仿真程序：
+```
+t0 = 0; tfinal = 5;
+tspan = [t0, tfinal];  % 设置仿真开始和结束的时间
+x0 = [0, 0]；  % 系统初始值
+options = odeset('AbsTol', [1e-6;1e-6]);  % 设置仿真精度
+[t, x] = ode113('F', tspan, x0, options);  % 微分方程求解
+```
 
 
 ## 传递函数
@@ -36,6 +57,78 @@ Z=[1; 2; 3]； %零点
 P=[4; 5; 6];  %极点
 G=zpk(Z,P,KGain)
 ```
+
+求传递函数的零点和极点：
+```
+[z, p, k] = tf2zp(num, den)
+```
+求传递函数的部分分式展开：
+```
+[r, p, k] = residue(num, den)
+% r为部分分式展开的各分式系数，p是系统的极点，k是常数项
+```
+根据部分分式展开式求原传递函数表达式：
+```
+[num, den] = residue(r, p, k)
+```
+
+## 控制系统的时域响应
+### 单位阶跃和单位脉冲响应
+单位阶跃响应：
+```
+step(sys1, sys2, ... , t)
+% sys1是传递函数描述
+% 在一张图上绘制出系统sys1，sys2...的阶跃响应曲线，t是时间向量（可选）
+step(sys1, 'y-', sys2, 'b--', ... , t)
+% 还可以指定每个系统响应曲线的颜色线性标记等
+
+
+[y, t] = step(sys1, sys2, ... , t)
+% t为时间向量，根据时间t计算出响应的响应值y
+```
+
+单位脉冲响应：
+```
+impulse(sys1, sys2, ... , t)
+[y, t] = impulse(sys1, sys2, ... , t)
+```
+使用方法与step()一致。
+
+### 瞬态性能指标的计算
+```
+sys = tf(num, den);
+t = 0:0.0005:20;
+
+[y, t] = step(sys, t);  % 求单位阶跃响应
+
+r1 = 1; 
+while y(r1) < 1.00001
+    r1 = r1+1;
+end
+rise_time = (r1-1) * 0.0005;  % 计算上升时间
+
+[ymax, tp] = max(y);  % 计算最大输出量值
+peak_time = (tp-1)*0.0005;  % 计算峰值时间
+max_overshoot = ymax - 1;  % 计算超调量
+
+s = 20/0.0005;
+while y(s)>0.98 && y(s)<1.02
+    s = s - 1;
+end
+settle_time = (s-1)*0.0005;  % 计算调整时间（误差带宽度取2%）
+```
+
+### 对任意输入信号的响应
+绘制单输入线性时不变系统的时间相应曲线：
+```
+lsim(sys1, sys2, sys3, ... ,r, t)
+% r为任意输入信号；t为时间向量
+
+y = lsim(sys1, sys2, sys3, ... ,r, t)
+```
+
+### 控制系统的稳定性
+直接使用 tf2zp() 或者求根函数 roots() ，求出零极点即可判断系统的稳定性。
 
 ## 根轨迹
 ### 绘制根轨迹
