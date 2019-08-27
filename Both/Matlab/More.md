@@ -42,3 +42,12 @@ Y = polyvalm(p,X)  % 以矩阵方式返回多项式 p 的计算值
 r = roots(d)
 % r为代数方程的根， d为代数方程的系数降幂排列行向量
 ```
+
+# syms 定义符号变量
+```
+syms a b;
+
+syms a real;  % 定义a是实数
+
+syms a positive;  % 定义a是正数
+```
