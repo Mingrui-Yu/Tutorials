@@ -42,6 +42,11 @@ python3
 import cv2
 ```
 
+# python脚本调用摄像头
+可以直接使用opencv调用摄像头
+
+参考 [树莓派（Raspberry Pi）中PiCamera+OpenCV的使用](https://blog.csdn.net/u012005313/article/details/70244747#C0)
+
 ***
 ***
 ***
