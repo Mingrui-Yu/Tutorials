@@ -34,6 +34,9 @@ ln -s /usr/local/python3/bin/python3 /usr/bin/python3
 ```
 # rm -rf [软链接地址]
 ```
+修改：
+```
+# ln -snf [新的目录地址][软链接地址]
 
 
 ***
