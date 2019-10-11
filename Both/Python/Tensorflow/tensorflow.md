@@ -1,5 +1,12 @@
 # import tensorflow as tf
 
+推荐参考教程：
+
+[简单粗暴 TensorFlow 2.0 | A Concise Handbook of TensorFlow 2.0](https://tf.wiki/index.html#tensorflow-2-0-a-concise-handbook-of-tensorflow-2-0)
+
+[TensorFlow官方教程](https://tensorflow.google.cn/tutorials/)
+
+## 通用操作
 构建模型：
 ```
 model = tf.keras.Sequential()  # keras建立一个网络
@@ -16,8 +23,6 @@ model.fit(train_data, train_label, epochs=epoch_num)  # 喂数据，训练
 test_loss, test_acc = model.evaluate(test_data, test_label, verbose=2)  # 用test set评估
 
 test_prediction = model.predict(test_data)  # 用训练好的模型进行预测
- 
-
 ```
 
 ## MNIST手写数字网络搭建
