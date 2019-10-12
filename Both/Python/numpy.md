@@ -1,3 +1,30 @@
+# import numpy as np
+
+## 基础属性
+```
+Array = np.array([[1,2,3], [2,3,4]])
+Array.ndim #维度
+Array.shape #行数和列数
+Array.size #元素个数
+
+a = np.array([2, 23, 4])
+a = np.array([2, 23, 4], dtype = np.int) #int64
+			 dtype = np.int32 #int32
+			 dtype = np.float
+			 dtype = np.float32
+							
+							
+a = np.zeros((3,4))
+a = np.ones((3,4), dtype = np.int)
+a = np.empty((3,4))
+
+a = arange(10,20,2)
+a = arange(12).reshape(3,4)
+
+a = np.linspace(1,10,20)
+```
+
+## 基础运算
 ```
 c = a + b
 c = a - b
@@ -15,8 +42,6 @@ a = b<3 #判断，a为bool型
 c = np.dot(a, b)
 c = a.dot(b)
 c = np.matmul(a, b)
-
-
 
 np.sum(a, axis=0) # 每个行向量取均值
 np.sum(a, axis=1) # 每个列向量取均值
