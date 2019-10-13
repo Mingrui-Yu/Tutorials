@@ -12,11 +12,18 @@ plt.figure()
 plt.show()
 ```
 
-## 折线图
+## 折线图 & 设置曲线label
 ```
 plt.plot(x_data, y_data,
-           label='')
+           label='', '--')
+
+plt.legend() ＃ 显示曲线label
 ```
+线型：
+```
+'--': 虚线
+```
+
 ## 散点图
 ```
 plt.scatter(x_data, y_data)
@@ -30,6 +37,8 @@ plt.yticks([])
 
 plt.imshow(img, cmap=plt.cm.binary)
 ```
+
+
 
 ## 设置图片label:内容 & 颜色
 ```
