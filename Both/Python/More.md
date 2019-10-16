@@ -14,3 +14,6 @@ OUTPUT:
 1, seq[1]
 ......
 ```
+
+## iter() next() 迭代
+[python中的iter()函数与next()函数](https://blog.csdn.net/xun527/article/details/76652189)

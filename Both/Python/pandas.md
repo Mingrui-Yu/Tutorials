@@ -25,7 +25,14 @@ raw_dataset = pd.read_csv(dataset_path, names=column_names,
 dataset.dropna()
 ```
 ## 打印数据集的最后５行
+```
 print(dataset.tail())
+```
+
+打印数据集的前５行：
+```
+df.head()
+```
 
 ## 将数据集拆分成两部分：训练数据集和测试数据集
 ```
@@ -46,4 +53,11 @@ def norm(x):
 
 normed_train_data = norm(train_dataset)
 normed_test_data = norm(test_dataset)
+```
+
+## 将object转换为离散数值
+eg: transfer ['good', 'ok', 'bad'] to [0, 1, 2]
+```
+df['col_name'] = pd.Categorical(df['col_name'])
+df['col_name'] = df.col_name.cat.codes
 ```
