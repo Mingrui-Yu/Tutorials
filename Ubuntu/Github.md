@@ -1,4 +1,4 @@
-# Ubuntu下进行Github环境配置
+# Ubuntu Github
 
 https://blog.csdn.net/m0_37592397/article/details/78664757
 
