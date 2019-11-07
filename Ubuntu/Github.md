@@ -58,4 +58,15 @@ git push
 ## git中submodule子模块的使用
 参考[git中submodule子模块的添加、使用和删除 | CSDN](https://blog.csdn.net/guotianqing/article/details/82391665)
 
+## 使用socks5代理，加速git clone
+[git 设置和取消代理](https://gist.github.com/laispace/666dd7b27e9116faece6)
+```
+git config --global http.proxy socks5h://127.0.0.1:1080
+
+```
+若要取消：
+```
+git config --global --unset http.proxy
+```
+
 
