@@ -51,8 +51,11 @@ git clone https://github.com//username//test_project.git
 ```
 git add .   // .代表添加所有文件  
 git commit -m "对文件操作的简易描述"  
-git push -u origin master 
+git push
 ```
 
+
+## git中submodule子模块的使用
+参考[git中submodule子模块的添加、使用和删除 | CSDN](https://blog.csdn.net/guotianqing/article/details/82391665)
 
 
