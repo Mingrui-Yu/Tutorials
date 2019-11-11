@@ -21,3 +21,13 @@
     按F5，选择default，生成lauch.json文件后将其中的"program"的内容改为："${workspaceFolder}/build/待执行文件的名字"
 
 都搞定之后按F5，就可以直接执行程序了。
+
+### VScode中的图床插件：PicGo
+
+[PicGo](https://marketplace.visualstudio.com/items?itemName=Spades.vs-picgo)，用vscode编辑markdown时，可以安装这个插件，从而很方便地上传并插入图像。
+
+操作|快捷键
+---|---
+Uploading an image from clipboard | Ctrl + Alt + U 
+Uploading images from explorer | Ctrl + Alt + E
+Uploading an image from input box | Ctrl + Alt + O
