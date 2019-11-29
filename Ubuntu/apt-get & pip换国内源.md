@@ -1,5 +1,24 @@
 # 换国内源
 
+## apt-get 换国内源
+
+备份源文件：
+```
+cd /etc/apt/
+sudo cp sources.list sources.list.bk
+```
+之后编辑源文件：
+```
+sudo gedit sources.list
+```
+将内容改为：[Ubuntu 镜像使用帮助 | 清华大学开源软件镜像站](https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/)
+
+之后更新：
+```
+sudo apt-get update  # 更新源  
+sudo apt-get upgrade  # 更新软件
+```
+
 ## pip 换国内源
 注意：pip和pip3的操作方式一样。
 
