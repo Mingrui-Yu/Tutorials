@@ -23,4 +23,11 @@ sudo nano /etc/shadowsocks.json
 }
 ```
 
+
+运行：
+```
+sslocal -c /etc/shadowsocks.json
+```
 之后配置网络代理：ubuntu设置-网络-网络代理-手动：在Socks中填入127.0.0.1和1080。
+
+若不运行，需要讲网络代理再改回来
