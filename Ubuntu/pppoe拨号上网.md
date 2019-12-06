@@ -39,6 +39,8 @@ quit
 这样基本就好了，以后连接该网络就可以直接点这个了。但是重启后会显示有线网络未托管。解决方法：
 ```
 sudo gedit /etc/NetworkManager/NetworkManager.conf  # 打开后，找到 [ifupdown] managed=false 修改成： [ifupdown] managed=true
+
+sudo service network-manager restart  # 其他地方可以也会用到
 ```
 之后再重启就不会有这个问题了。
 
