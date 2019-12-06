@@ -1,4 +1,4 @@
-# 给予jekyll和GitHub Pages搭建个人主页
+# 基于 jekyll 和 GitHub Pages 搭建个人主页
 
 ## 使用GitHub Pages搭建个人主页
 在github上建立一个repo，名为"username.github.io" (eg: Mingrui-Yu.github.io)
