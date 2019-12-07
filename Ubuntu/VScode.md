@@ -22,6 +22,8 @@
 
 都搞定之后按F5，就可以直接执行程序了。
 
+如果想添加task文件自动cmake，可参考[vscode + cmake + cpp 多文件编译、断点调试](https://blog.csdn.net/zhulinmanbu114/article/details/90754803)
+
 ### VScode中的图床插件：PicGo
 
 [PicGo](https://marketplace.visualstudio.com/items?itemName=Spades.vs-picgo)，用vscode编辑markdown时，可以安装这个插件，从而很方便地上传并插入图像。

@@ -2,8 +2,20 @@
 
 ## 读取图像
 ```
-Mat img = imread("file_name", 0); //　读取灰度图像，8位深度，类型uchar
+Mat img = imread("file_name", 0); //　读取灰度图像，8位深度，1通道，数据类型uchar
+Mat img = imread("file_name", -1); //　读取原始图像，原通道，数据类型根据原始图像的类型来
+Mat img = imread("file_name", 1); //　读取彩色图像，8位深度，3通道
 ```
+参考：  
+flag=-1，8位深度，原通道  
+flag=0，8位深度，1通道  
+flag=1,   8位深度  ，3通道  
+flag=2，原深度，1通道  
+flag=3,  原深度，3通道  
+flag=4，8位深度 ，3通道  
+
+
+
 ## 新建图像
 ```
 Mat img(height, width, CV_64F); // CV_64F: 64位浮点类型

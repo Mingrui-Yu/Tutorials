@@ -1,4 +1,4 @@
-# SLAM需要的配置: Eigen, OpenCV
+# SLAM需要的配置: Eigen, OpenCV, PCL
 
 ## Eigen
 ```
@@ -44,3 +44,22 @@ sudo ldconfig
 ```
 sudo apt-get install libcanberra-gtk-module
 ```
+
+## PCL 安装
+```
+sudo apt-get install libpcl-dev pcl-tools
+```
+可能会报错：
+
+    有一些软件包无法被安装。如果您用的是 unstable 发行版，这也许是
+    因为系统无法达到您要求的状态造成的。该版本中可能会有一些您需要的软件
+    包尚未被创建或是它们已被从新到(Incoming)目录移出。
+    下列信息可能会对解决问题有所帮助：
+    下列软件包有未满足的依赖关系：
+此时可以这样解决：安装aptitude，aptitude可以比apt-get更加智能地解决依赖问题。
+```
+sudo apt-get install aptitude
+sudo aptitude install libpcl-dev
+sudo apt-get install pcl-tools
+```
+
