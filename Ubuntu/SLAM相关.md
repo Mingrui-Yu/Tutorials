@@ -63,3 +63,20 @@ sudo aptitude install libpcl-dev
 sudo apt-get install pcl-tools
 ```
 
+### 查看pcd点云文件
+In ternimal:
+```
+pcl_viewer filename.pcd
+```
+
+## Octovis安装
+Octovis是八叉树地图及可视化工具。
+
+安装：
+```
+sudo apt-get install liboctomap_dev octovis
+```
+查看bt地图文件：In terminal:
+```
+octovis filename.bt
+```
