@@ -56,3 +56,11 @@ sudo reboot
 在DASH下搜索firefox即可找到我们安装的中文版火狐浏览器了，拖到Dock中固定即可。
 
 **但是，火狐的图标未能正确显示，可以点开，但图标缺失（透明）**
+
+## 使用shadowsocks科学上网
+
+在shadowsocks已经配置好的情况下，chrome已经可以科学上网，但firefox不行。
+
+需要再配置：Firefox-首选项-常规-网络设置：  
+* 手动配置代理: SOCKS主机：127.0.0.1 端口：1080
+* 下方勾选“使用SOCKS v5时代理DNS查询”。

@@ -12,3 +12,7 @@ vector<Eigen::Matrix4d>;
 vector<Eigen::Matrix4d,Eigen::aligned_allocator<Eigen::Matrix4d>>;
 ```
 其实上述的这段代码才是标准的定义容器方法，只是我们一般情况下定义容器的元素都是C++中的类型，所以可以省略，这是因为在C++11标准中，aligned_allocator管理C++中的各种数据类型的内存方法是一样的，可以不需要着重写出来。但是在Eigen管理内存和C++11中的方法是不一样的，所以需要单独强调元素的内存分配和管理。
+
+## EIGEN_MAKE_ALIGNED_OPERATOR_NEW 
+参考：[Structures Having Eigen Members](https://eigen.tuxfamily.org/dox/group__TopicStructHavingEigenMembers.html)
+
