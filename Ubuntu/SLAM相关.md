@@ -1,4 +1,4 @@
-# SLAM需要的配置: Eigen, OpenCV, PCL
+# SLAM需要的配置 (in 视觉SLAM十四讲)
 
 ## Eigen
 ```
@@ -80,3 +80,34 @@ sudo apt-get install liboctomap_dev octovis
 ```
 octovis filename.bt
 ```
+
+
+## Google GTest
+```
+sudo apt-get install libgtest-dev
+
+cd /usr/src/gtest
+
+sudo mkdir build
+cd build
+sudo cmake ..
+sudo make
+
+# 将生成的libgtest.a 和 libgtest_main.a 拷贝到系统的lib路径下
+sudo cp libgtest*.a /usr/local/lib
+```
+
+
+
+## OpenGL/Glut
+参考：[Installing OpenGL/Glut libraries in Ubuntu](http://kiwwito.com/installing-opengl-glut-libraries-in-ubuntu/)
+
+The first step is to install the development libraries of OpenGL/Glut in Ubuntu:
+```
+sudo apt-get install freeglut3 freeglut3-dev
+```
+For newer versions of Ubuntu (>= 11.10) you have to install another package because the linker does't link anymore.
+```
+sudo apt-get install binutils-gold
+```
+
