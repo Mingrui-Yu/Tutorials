@@ -8,10 +8,10 @@
 CMakeLists中：
 ```
 set(CMAKE_BUILD_TYPE "Debug")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall -g")
 ```
 
 不需要debug模式的话，就使用Release模式：
 ```
 set(CMAKE_BUILD_TYPE "Release")
 ```
+不设置，默认是debug模式。

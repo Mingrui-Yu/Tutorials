@@ -14,6 +14,8 @@ flag=2，原深度，1通道
 flag=3,  原深度，3通道  
 flag=4，8位深度 ，3通道  
 
+参考：[OpenCV之通道和位深的理解（CV_8UC1,CV_8SC1,CV_32FC1）](https://blog.csdn.net/u011028345/article/details/75415914)
+
 
 
 ## 新建图像
