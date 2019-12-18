@@ -36,6 +36,8 @@ cv::imwrite("file_name", img * 255);
 // 注意，以下所有方式中的数据类型需要和图像的数据类型对应好
 //　方式１
 image.ptr<double>(y)[x]
+// 如果是三通道图像
+image.ptr<double>(y)[x * image.channels()][c]
 
 //　方式２：最慢
 image.at<double>(y, x)
