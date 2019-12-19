@@ -19,3 +19,8 @@ CodeCogs 提供了一个[在线 LaTeX 编辑器](https://www.codecogs.com/latex/
 Uploading an image from clipboard | Ctrl + Alt + U 
 Uploading images from explorer | Ctrl + Alt + E
 Uploading an image from input box | Ctrl + Alt + O
+
+
+## 表格
+
+一个快速编辑markdown和latex表格的网站：[Tables Generator](http://www.tablesgenerator.com/latex_tables)
