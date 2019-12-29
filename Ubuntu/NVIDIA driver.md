@@ -1,5 +1,71 @@
 # Ubuntu 18.04 NVIDIA driver installation (Failure in Thinkpad S5)
 
+
+查看系统当前内核：
+```
+uname -r
+```
+
+上nvidia官网查看显卡对应的最新驱动版本号
+
+卸载旧版本的nvidia驱动：
+```
+sudo apt-get  autoremove --purge nvidia*
+```
+
+使用如下命令添加Graphic Drivers PPA：
+```
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+```
+
+禁用nouveau驱动：
+Ubuntu系统集成的显卡驱动程序是nouveau，我们需要先将nouveau从Linux内核卸载掉才能安装NVIDIA官方驱动。 
+将nouveau添加到黑名单blacklist.conf中，linux启动时，就不会加载nouveau. 
+
+由于blacklist.conf文件的属性不允许修改。所以需要先修改文件属性。
+```
+sudo chmod 666 /etc/modprobe.d/blacklist.conf
+``` 
+```
+sudo vi /etc/modprobe.d/blacklist.conf
+```
+在文件末尾添加如下几行：
+```
+blacklist nouveau
+options nouveau modeset=0
+```
+修改并保存文件后，记得把文件属性复原：
+```
+sudo chmod 644 /etc/modprobe.d/blacklist.conf
+```
+再更新一下内核：
+```
+sudo update-initramfs -u
+``` 
+修改后需要重启系统。
+
+重启系统确认nouveau是已经被屏蔽掉，使用lsmod命令查看：无输出则为成功禁用。
+```
+lsmod | grep nouveau
+```
+
+
+If your nvidia-smi failed to communicate but you've installed the driver so many times, check prime-select.  
+Run prime-select query to get all possible options. You should see at least nvidia | intel.
+Choose prime-select nvidia.
+If it says nvidia is already selected, select a different one, e.g. prime-select intel, then switch back to nvidia prime-select nvidia
+Reboot and check nvidia-smi.
+
+
+
+
+
+
+
+
+***
+
 [1050Ti Ubuntu18.04](https://blog.cnblogs.com/devilmaycry812839668/p/10351400.html)
 
 [Ubuntu18.04](https://blog.csdn.net/chentianting/article/details/85089403)
