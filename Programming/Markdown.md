@@ -24,3 +24,22 @@ Uploading an image from input box | Ctrl + Alt + O
 ## 表格
 
 一个快速编辑markdown和latex表格的网站：[Tables Generator](http://www.tablesgenerator.com/latex_tables)
+
+## 常用命令
+
+### 字体
+加粗：
+```
+** 内容 **
+```
+
+斜体：
+```
+* 内容 *
+```
+
+### 图片
+设置居中和宽度：
+```
+<div align=center><img src="https://img2018.cnblogs.com/blog/1921421/202002/1921421-20200214185756593-677332335.png" width = "60%" /></div>
+```
