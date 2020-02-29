@@ -16,8 +16,9 @@ string path = "./data/"+to_string(i+1)+".png";
 std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
 
 std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
+
 std::chrono::duration<double> time_used = std::chrono::duration_cast <std::chrono::duration<double>> (t2 - t1);
-std::cout << time_used.count() << "second"; 
+std::cout << time_used.count() << " second"; 
 ```
 
 # 智能指针shared_ptr
