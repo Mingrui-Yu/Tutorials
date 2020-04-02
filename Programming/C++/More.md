@@ -10,7 +10,7 @@ string path = "./data/"+to_string(i+1)+".png";
 
 # std::chrono 计时
 使用std::chrono，不要用ctime：
-```
+```c++
 #include <chrono>
 
 std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
@@ -18,15 +18,39 @@ std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
 std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
 
 std::chrono::duration<double> time_used = std::chrono::duration_cast <std::chrono::duration<double>> (t2 - t1);
-std::cout << time_used.count() << " second"; 
+std::cout << time_used.count() << "s" << std::endl; 
 ```
 
-# 智能指针shared_ptr
+更高精度：
+
+```c++
+auto t_start = std::chrono::high_resolution_clock::now();
+auto t_end = std::chrono::high_resolution_clock::now();
+auto time_used = std::chrono::duration_cast<std::chrono::milliseconds>(t_end-t_start);
+std::cout << time_used.count() << "ms" << std::endl; 
+```
+
+
+
+# 智能指针
+
 ```
 #include <memory>
 ```
 
+### std::shared_ptr
+
+```
+// 删除 p 对 unimportant_ptr 的对象的指向，并不会删除 unimportant_ptr 的对象（计数器减1）
+std::shared_ptr<T> p;
+p = unimportant_ptr;
+p.reset();
+```
+
+
+
 # size_t
+
 size_t在32位系统和64位系统分别代表了unsigned int 与unsigned long 类型，这样的话方便代码在各类型机器中移植。
 
 常用于循环中：

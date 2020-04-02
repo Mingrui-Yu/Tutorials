@@ -10,6 +10,13 @@ GitHub Flavored Markdown 曾经是支持 LaTeX 的，但是现在不支持了…
 
 CodeCogs 提供了一个[在线 LaTeX 编辑器](https://www.codecogs.com/latex/eqneditor.php)，可以将输入的数学公式转换为图片，并自动生成 HTML 代码（也支持其他格式）。
 
+其它可以安装 Mathjax
+
+公式居中： 
+```
+$$ xxx $$
+```
+
 ### VScode中的图床插件：PicGo
 
 [PicGo](https://marketplace.visualstudio.com/items?itemName=Spades.vs-picgo)，用vscode编辑markdown时，可以安装这个插件，从而很方便地上传并插入图像。

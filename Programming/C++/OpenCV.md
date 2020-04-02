@@ -11,8 +11,15 @@
 #include "opencv2/xfeatures2d.hpp"  // 特征提取、描述、匹配
 ```
 
+## 清除 cv::Mat
+
+```
+cv::Mat m;
+m.release();
+```
 
 ## 读取图像
+
 ```
 Mat img = imread("file_name", 0); //　读取灰度图像，8位深度，1通道，数据类型uchar
 Mat img = imread("file_name", -1); //　读取原始图像，原通道，数据类型根据原始图像的类型来

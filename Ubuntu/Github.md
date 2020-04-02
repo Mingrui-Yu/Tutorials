@@ -69,4 +69,15 @@ git config --global http.proxy socks5h://127.0.0.1:1080
 git config --global --unset http.proxy
 ```
 
+## 使用 .gitignore 上传时忽略指定文件
+
+https://www.liaoxuefeng.com/wiki/896043488029600
+
+注意：在编写 .gitignore 之前就已经上传了的文件无法被之后添加的 .gitignore 管理，需要先在云端删除：
+
+```
+git rm -r -- cached FILE_NAME
+git commit -m "delete xxx"
+git push
+```
 

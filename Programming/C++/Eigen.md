@@ -7,7 +7,7 @@
 ```
 
 ## Eigen常规使用
-```
+```c++
 // Eigen 核心部分
 #include <Eigen/Core>
 // 稠密矩阵的代数运算（逆，特征值等）
@@ -111,7 +111,7 @@
 ```
 
 ## Eigen/Geometry
-```
+```cpp
 #include <Eigen/Core>
 
   // 3D 旋转矩阵直接使用 Matrix3d 或 Matrix3f
@@ -161,6 +161,13 @@
   cout << "should be equal to " << (q * Quaterniond(0, 1, 0, 0) * q.inverse()).coeffs().transpose() << endl;
 ```
 
+
+
+```cpp
+// 取旋转矩阵和平移向量
+Eigen::Matrix<double, 3, 1> pose_t = frame_pose.translation();
+Eigen::Matrix<double, 3, 3> pose_R = frame_pose.rotationMatrix();
+```
 
 
 
