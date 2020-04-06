@@ -76,8 +76,11 @@ https://www.liaoxuefeng.com/wiki/896043488029600
 注意：在编写 .gitignore 之前就已经上传了的文件无法被之后添加的 .gitignore 管理，需要先在云端删除：
 
 ```
-git rm -r -- cached FILE_NAME
+git rm -r --cached FILE_NAME
 git commit -m "delete xxx"
 git push
 ```
 
+## 重命名 repo
+
+https://help.github.com/cn/github/administering-a-repository/renaming-a-repository
