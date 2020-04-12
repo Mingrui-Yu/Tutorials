@@ -159,6 +159,10 @@
   cout << "(1,0,0) after rotation = " << v_rotated.transpose() << endl;
   // 用常规向量乘法表示，则应该如下计算
   cout << "should be equal to " << (q * Quaterniond(0, 1, 0, 0) * q.inverse()).coeffs().transpose() << endl;
+
+// 旋转矩阵 转换为 旋转向量
+Eigen::AngleAxisd rotation_vector;
+rotation_vector.fromRotationMatrix(rotationMatrix);
 ```
 
 

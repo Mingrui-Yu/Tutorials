@@ -14,8 +14,7 @@ plt.show()
 
 ## 折线图 & 设置曲线label
 ```
-plt.plot(x_data, y_data,
-           label='', '--')
+plt.plot(x_data, y_data, '--', label='LABELNAME')
 
 plt.legend() ＃ 显示曲线label
 ```

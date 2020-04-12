@@ -86,3 +86,11 @@ SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -pthread")
 ```
 g++ xxx.cpp -pthread -std=c++11
 ```
+
+## string to int
+
+```
+int a;
+std::string b = std::stoi(a);
+```
+
