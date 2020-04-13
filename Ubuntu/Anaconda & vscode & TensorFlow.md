@@ -12,12 +12,15 @@
     sudo bash Anaconda3-5.0.0-Linux-x86_64.sh
     ```
     按照提示安装即可，默认将安装在~目录下，如需更改，可以自行指定。
-    最后允许将Anaconda路径添加到bashrc中。
-
+    
+最后允许将Anaconda路径添加到bashrc中。
+    
+    （似乎可以没有这一步）
+    
+```
+    source ~/anaconda3/etc/profile.d/conda.sh 
     ```
-    source ~/anaconda3/etc/profile.d/conda.sh
-    ```
-
+    
 3. 激活安装：
     ```
     source ~/.bashrc
@@ -40,7 +43,7 @@ conda config --set show_channel_urls yes
 
 ### 升级
 ```
-conda update -n base -c defaults conda
+conda update -n base -c defaults conda  # 似乎可以没有
 conda upgrade --all
 ```
 
