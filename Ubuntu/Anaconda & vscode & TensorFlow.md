@@ -13,14 +13,15 @@
     ```
     按照提示安装即可，默认将安装在~目录下，如需更改，可以自行指定。
     
+
 最后允许将Anaconda路径添加到bashrc中。
     
     （似乎可以没有这一步）
-    
+
 ```
     source ~/anaconda3/etc/profile.d/conda.sh 
-    ```
-    
+```
+
 3. 激活安装：
     ```
     source ~/.bashrc
@@ -56,6 +57,14 @@ conda upgrade --all
 
 ### conda虚拟环境
 [TensorFlow 安装与环境配置/Conda虚拟环境](https://tf.wiki/zh/basic/installation.html#tensorflow)
+
+查看当前虚拟环境使用的python path  [参考](https://docs.anaconda.com/anaconda/user-guide/tasks/integration/python-path/)
+
+```
+which python
+```
+
+
 
 ***
 

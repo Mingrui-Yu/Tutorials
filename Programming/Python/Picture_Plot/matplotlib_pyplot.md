@@ -86,3 +86,40 @@ thisplot[true_label].set_color('blue')
 plt.hist(data, bins=)
 ```
 * bins为直方图的柱数
+
+## 绘制 x y z 轴比例相同的 三维图
+
+```python
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def set_aspect_equal_3d(ax):
+    """Fix equal aspect bug for 3D plots."""
+
+    xlim = ax.get_xlim3d()
+    ylim = ax.get_ylim3d()
+    zlim = ax.get_zlim3d()
+
+    from numpy import mean
+    xmean = mean(xlim)
+    ymean = mean(ylim)
+    zmean = mean(zlim)
+
+    plot_radius = max([abs(lim - mean_)
+                       for lims, mean_ in ((xlim, xmean),
+                                           (ylim, ymean),
+                                           (zlim, zmean))
+                       for lim in lims])
+
+    ax.set_xlim3d([xmean - plot_radius, xmean + plot_radius])
+    ax.set_ylim3d([ymean - plot_radius, ymean + plot_radius])
+    ax.set_zlim3d([zmean - plot_radius, zmean + plot_radius])
+    
+# 使用：
+fig = plt.figure()
+ax = fig.gca(projection='3d')
+ax.plot(x, y, z)
+set_aspect_equal_3d(ax)
+plt.show()
+```
+
