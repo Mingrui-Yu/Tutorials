@@ -26,11 +26,26 @@ tar -cvf FILE_NAME
 xz -z FILE_NAME
 ```
 
-# 下载文件
+## 下载文件
 
 多种用法 [参考](https://www.cnblogs.com/wuheng1991/p/5332764.html)
 
 ```
 wget URL
+```
+
+## 杀死进程
+
+```
+ps -aux # 查看进程
+
+kill ID # 根据进程编号杀死进程
+```
+
+## 查看磁盘空间
+
+```
+df -hl  # 查看磁盘剩余空间
+df -sh NAME  # 查看目录的大小
 ```
 

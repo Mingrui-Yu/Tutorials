@@ -173,6 +173,14 @@ Eigen::Matrix<double, 3, 1> pose_t = frame_pose.translation();
 Eigen::Matrix<double, 3, 3> pose_R = frame_pose.rotationMatrix();
 ```
 
+## 块操作
+
+```cpp
+// 块操作
+A.block(i, j, p, q) 
+A.block<p, q>(i, j)
+```
+
 
 
 ## Eigen::aligned_allocator

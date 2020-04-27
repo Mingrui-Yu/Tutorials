@@ -65,3 +65,27 @@ A.T #矩阵转置
 
 np.clip(A, min, max) 将矩阵中的元素，小于设定最小值的令其等于最小值，大于设定最大值的令其等于最大值
 ```
+
+## 加载 txt 文件
+
+[参考](https://blog.csdn.net/ACID_lv_ing/article/details/87092714)
+
+```
+file = np.loadtxt('file_name', dtype=float) # 默认就是 float
+
+# txt 文件中的数据以 , 作为分隔
+file = np.loadtxt('file_name', delimiter=',')
+```
+
+## 拼接、合并
+
+```
+# 水平合并
+C = np.concatenate((A, B), axis=1)
+C = np.hstack((A, B))
+
+# 垂直合并
+C = np.concatenate((A, B), axis=0)
+C = np.vstack((A, B))
+```
+

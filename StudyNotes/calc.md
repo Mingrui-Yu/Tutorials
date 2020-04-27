@@ -17,6 +17,7 @@ pip install click
 报错：
 
 ```
+calc/TrainAndTest_origin_backup/ThirdParty/DBoW2/build/dependencies/src/DLib/src/DUtilsCV/Drawing.cpp
 error: no matching function for call to ‘_IplImage::_IplImage(cv::Mat&)’
    IplImage ipl_im = IplImage(im);
 ```

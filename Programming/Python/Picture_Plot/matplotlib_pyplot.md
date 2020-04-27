@@ -1,7 +1,7 @@
 # import matplotlib.pyplot as plt
 
 ## 基础：显示图片
-```
+```python
 # 新建一个图片
 plt.figure()
 
@@ -16,7 +16,7 @@ plt.show()
 ```
 plt.plot(x_data, y_data, '--', label='LABELNAME')
 
-plt.legend() ＃ 显示曲线label
+plt.legend(loc="upper right") ＃ 显示曲线label, loc="upper right"表示label显示在右上角
 ```
 线型：
 ```
