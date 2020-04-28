@@ -127,3 +127,13 @@ if (image.data == nullptr)
 cv::RNG rng;
 rng.gaussian(sigma * sigma)  // 服从(0, sigma^2)高斯分布的一个值
 ```
+
+## 灰度图 RGB图 之间转换
+
+```
+cv::cvtColor(srcimg, dstimg, cv::COLOR_BGR2GRAY);
+cv::cvtColor(srcimg, dstimg, cv::COLOR_GRAY2BGR);
+
+# RGB 同理，将 BGR 改为 RGB 即可
+```
+

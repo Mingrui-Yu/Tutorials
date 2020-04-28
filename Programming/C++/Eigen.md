@@ -181,6 +181,15 @@ A.block(i, j, p, q)
 A.block<p, q>(i, j)
 ```
 
+## 给矩阵增加一列
+
+[参考](https://stackoverflow.com/questions/27404811/append-column-to-matrix-using-eigen-library)
+
+```
+mat.conservativeResize(mat.rows(), mat.cols()+1);
+mat.col(mat.cols()-1) = vec;
+```
+
 
 
 ## Eigen::aligned_allocator
