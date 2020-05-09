@@ -12,7 +12,12 @@ plt.figure()
 plt.show()
 ```
 
+## color表
+
+https://finthon.com/matplotlib-color-list/
+
 ## 折线图 & 设置曲线label
+
 ```
 plt.plot(x_data, y_data, '--', label='LABELNAME')
 

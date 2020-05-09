@@ -1,0 +1,1 @@
+[主成分分析法原理简介](http://astrowww.bnu.edu.cn/sites/Computational_Astronomy/html/6shijian/chengguo/2008%E5%AD%A6%E7%94%9F/pca-%E5%A7%9C%E6%99%A8.pdf)

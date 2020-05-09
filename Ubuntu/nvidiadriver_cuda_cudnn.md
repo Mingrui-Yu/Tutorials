@@ -85,3 +85,8 @@ cat /usr/local/cuda/version.txt
 cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
 ```
 
+### CUDNN_STATUS_INTERNAL_ERROR
+
+[参考](https://github.com/tensorflow/tensorflow/issues/24496)
+
+大概原因是显存不足，没有找到合适的解决办法。如果有的时候能运行有的时候运行不了，说明运行不了的时候是因为其他进程占用显存过多。重启再运行能解决。
