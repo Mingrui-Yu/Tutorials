@@ -16,10 +16,42 @@ plt.show()
 
 https://finthon.com/matplotlib-color-list/
 
-## 折线图 & 设置曲线label
+## 字体调节
+
+[参考](https://zhuanlan.zhihu.com/p/35983270)
 
 ```
+from matplotlib import rcParams
+from matplotlib.font_manager import FontProperties 
+
+# 推荐设置
+params={‘font.family':'serif',
+        'font.serif':'Times New Roman',
+        'font.style':'italic',
+        'font.weight':'normal', #or 'bold'
+        'font.size':'medium',#or large,small
+        }
+rcParams.update(params)
+
+# 面向对象使用FrontProperties
+font0=FontProperties()
+font0.set_size('medium')
+font0.set_family('serif')
+font0.set_style('normal')
+font0.set_variant('normal')
+font0.set_stretch('normal')
+font0.set_weight('blod')
+```
+
+
+
+## 折线图 & 设置曲线label
+
+```python
 plt.plot(x_data, y_data, '--', label='LABELNAME')
+
+# 设置曲线的透明度
+plt.plot(x, y, 'r-', alpha=0.7)
 
 plt.legend(loc="upper right") ＃ 显示曲线label, loc="upper right"表示label显示在右上角
 ```
@@ -51,8 +83,21 @@ plt.xlabel("{} {:2.0f}% ({})".format(class_names[predicted_label],
                             class_names[true_label]),
                             color=color)
 ```
-## 设置坐标轴范围
-```
+## 设置坐标轴
+```python
+# 设置是否显示刻度
+ax = plt.gca()     
+ax.axes.xaxis.set_ticklabels([])
+ax.axes.yaxis.set_ticklabels([])
+ax.axes.xaxis.set_ticklabels([])
+ax.axes.zaxis.set_ticklabels([])
+# or
+plt.xticks([])
+plt.yticks([])
+
+
+
+# 设置范围
 plt.xlim([min, max])
 plt.ylim([min, max])
 ```
