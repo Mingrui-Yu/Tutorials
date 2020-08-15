@@ -1,0 +1,43 @@
+# WIN10 配置使用 Zotero
+
+## 下载安装
+
+https://www.zotero.org/
+
+Zotero - 编辑 - 首选项 - 高级 - 文件和文件夹： 更改数据存储位置（不放在C盘）
+
+## 使用 WebDAV 连接坚果云
+
+Zotero - 编辑 - 首选项 - 同步：
+
+* 使用 WebDAV
+* 在坚果云官网上申请第三方应用接入，将相应信息填入此处，点击OK
+
+之后会发现在坚果云目录下会出现“zotero”文件夹（与我的坚果云并列）
+
+## 在 ipad 上用 PDF expert 查看编辑 zotero 中的 pdf 文件
+
+PDF expert 与坚果云完成连接
+
+下载 zotero 的插件：zotfile http://zotfile.com/
+
+按照 [参考](https://www.ravenxrz.ink/archives/1b8fe85b.html) 中进行相应配置，将同步目录设定为坚果云同步文件夹中的一个目录
+
+之后在 zotero 中利用 zotfile 将 pdf 导出至同步文件夹，在 ipad 上用 PDF expert 查看同步文件夹内的pdf文件。PC端再将编辑后的 pdf 文件从同步文件夹导入至 zotero。
+
+## 导入知网的文献
+
+目前无法将知网下载的文献拖入Zotero实现自动抓取，导入知网文献的步骤如下：
+
+1. 在知网上对应文献导出参考文献，选择Endnote格式，复制到剪贴板
+2. 在Zotero中选择 “文件-从剪贴板中导入”，导入条目
+3. 从知网下载pdf文件，拖入Zotero，再拖至上述条目内
+
+## Zotero + Word 进行参考文献管理
+
+在word中显示Zotero加载项：[下载安装了zotero，为什么word没显示zotero的加载项 | CSDN](https://blog.csdn.net/quinn1994/article/details/104460556?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight)
+
+GBT7714-2015参考文献格式的csl文件：[几个 GB/T7714相关的csl文件 | 知乎](https://zhuanlan.zhihu.com/p/62396113) ，选择第三个。
+
+在Word中插入参考文献的其他步骤：[[Zotero]如何在Word中插入参考文献 | 知乎](https://zhuanlan.zhihu.com/p/62931860)
+

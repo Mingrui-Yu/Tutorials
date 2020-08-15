@@ -50,3 +50,9 @@ Uploading an image from input box | Ctrl + Alt + O
 ```
 <div align=center><img src="https://img2018.cnblogs.com/blog/1921421/202002/1921421-20200214185756593-677332335.png" width = "60%" /></div>
 ```
+
+```
+<p align="center">
+  <img width="60%" src="https://raw.githubusercontent.com/Mingrui-Yu/Seq-CALC/master/docs/sequence.png">
+</p>
+```
